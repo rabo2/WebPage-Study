@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/outstyle.css">
+ <style>
+	iframe {
+		width: 500px;
+		height: 300px;
+	}
+</style>
+</head>
+<body>
+	<pre>
+	iframe : 현재 웹 페이지안에 다른 웹페이지를 삽입
+	iframe의 name을 이용해서 a태그의 target 속성 값으로 사용
+	
+	인라인 요소는 자체로 크기조절이 불가하지만
+	iframe과 img태그는 예외로 한다.
+	</pre>
+	
+	
+	<h1>iframe연습</h1>
+	
+	
+	<br>
+	<a href="../에스프레소.html" target="ifr">에스프레소</a>
+	<a href="../0601/new/라떼.html" target="ifr">라떼</a>
+	<a href="../0601/아메리카노.html" target="ifr">아메리카노</a>
+	<a href="../0601/카푸치노.html" target="ifr">카푸치노</a>
+	
+	<br><br>
+	
+	<iframe name="ifr" src="http://www.ddit.or.kr"></iframe>
+	
+</body>
+</html>

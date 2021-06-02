@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<pre>
+	전송 버튼을 클릭하면  test.jsp페이지를 get방식으로 요청한다.
+	url주소 뒤에 queryString으로 입력한 값들이 표신된다.
+	
+	ex) http://localhost/webPro/0602/form1.html?id=raboy&pw=1234
+	</pre>
+
+	<h2>get 방식으로 서버페이지에 요청하기	</h2>
+	
+	<form action="test.jsp" method="get">
+		id<input type="text" name="id"><br>
+		pw<input type="password" name="pw"><br>
+		<input type="submit" value="전송"><br>
+		<input type="reset">
+	</form>
+</body>
+</html>
