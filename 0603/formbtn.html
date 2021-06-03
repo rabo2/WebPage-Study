@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>Insert title here</title>
+</head>
+<body>
+	<pre>
+	전송기능을 수행한다.
+	&lt;button>전송&lt;/button>
+	&lt;input type="submit">
+	
+	전송기능을 수행하지 않는다.
+	&lt;button type="button">확인&lt;/button>
+	&lt;input type="button" value="확인">
+	
+	textarea에 입력시 엔터기호가 입력된다
+	엔터기호는 \r\n의 기능이 포함되어 있다.
+	서버에서 처리시 브라우저에 &lt;br> 태그로 줄바꿈 처리 해야 한다.
+	</pre>
+
+	<form action="formbtn.jsp" method="post">
+		이름 : <input type="text" name="name"><br>
+		전화번호 : <input type="text" name="tel"><br>
+		<textarea name="ttarea" rows="6" cols="40"></textarea><br>
+		<select name="cars">
+			<option value="벤츠">벤츠</option>
+			<option value="아우디">아우디</option>
+			<option value="람보르기니">람보르기니</option>
+			<option value="포르쉐">포르쉐</option>
+			<option value="마세라티">마세라티</option>
+		</select>
+		<br><br>
+		
+		<button>전송</button>
+		<button type="button">확인</button> <br>
+		<input type="submit" value="전송">
+		<input type="button" value="확인">
+	</form>
+	
+</body>
+</html>
