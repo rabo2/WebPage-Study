@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>Insert title here</title>
+ <style>
+	form{
+		display: none;
+	}
+	label{
+		display : inline-block;
+		width: 100px;
+		height: 30px;
+	}
+	fieldset{
+		width: 50%; 
+	}
+	
+ </style>
+ <script>
+	function f1(){
+		a = document.getElementById('f1');
+// 		메서드에 id가 붙어있기 때문에 #을 붙히지 않아도 된다.
+		a.style.display = 'block';
+	
+	}
+	function f2(){
+		a = document.querySelector('#f2');
+		a.style.display = 'block';
+	}
+</script>
+</head>
+<body>
+	<pre>
+		fieldset : 항목들을 그룹화 (블럭요소 - 크기조절 가능)
+		label : input 요소의 제목 (인라인요소 - 크기조절불가)	
+		인라인 요소에 크기조절을 하기 위해서는 display : inline-block 스타일을 이용
+	</pre>
+	
+	<input type="button" onclick="f1()" value="f1보기">
+	<button onclick="f2()">f2보기</button>
+
+	<form id="f1">
+	 	<fieldset>
+			<legend>인적사항f1</legend>
+			<label for="name">이름</label>
+			<input type="text" name="name" id="name" value="김민석"> <br>
+			
+			<label for="id">아이디</label>
+			<input type="text" name="id" id="id"> <br>
+			
+			<label for="tel">전화번호</label>
+			<input type="text" name="tel" id="tel"> <br>
+			
+		</fieldset>
+	</form>
+	
+	<form id="f2">
+	 	<fieldset>
+			<legend>인적사항f2</legend>
+			<label for="name">이름</label>
+			<input type="text" name="name" id="name" value="김민석"> <br>
+			
+			<label for="id">아이디</label>
+			<input type="text" name="id" id="id"> <br>
+			
+			<label for="tel">전화번호</label>
+			<input type="text" name="tel" id="tel"> <br>
+			
+			<label for="email">이메일</label>
+			<input type="text" name="email" id="email"> <br>
+			
+			<label for="addr">주소</label>
+			<input type="text" name="addr" id="addr"> <br>
+			<!-- 		required는 필수항목을 지정하는 속성 -->
+			<input type="submit" value="전송">
+		</fieldset>
+	</form>
+
+</body>
+</html>

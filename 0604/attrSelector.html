@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>Insert title here</title>
+ <style>
+	p{
+		border: 5px solid pink;
+		margin-left: 20px;
+		padding: 10px;
+	}
+	p.a{
+		background-color: orange;
+	}
+	p[title="벚꽃"]{
+		background-color: #0000ff;
+	}
+	p[class="c"]{
+		font-size: 3.0em;
+		border-style: outset;
+		border-width: 15px;
+	}
+	p[title]{
+		color: rgb(30%, 50%, 10%);
+		font-weight: bold;
+	}
+	
+ </style>
+</head>
+<body>
+	<p title="무궁화" class="a">1</p>
+	<p title="벚꽃" class="b">2</p>
+	<p title="해바라기" class="c">3</p>
+	<p title="계란꽃" class="d">4</p>
+</body>
+</html>
