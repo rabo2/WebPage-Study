@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function getTN() {
+		arr = [];
+		// 		a = document.getElementsByTagName('div')[2];
+		// 		a = document.querySelector('div');
+		arr = document.querySelectorAll('div'); //개수가 여러개이기 때문에 배열필요
+		// 		alert(a.length);
+		// 		a.style.border = '3px solid coral';
+
+		for (i = 0; i < arr.length; i++) {
+			arr[i].style.border = '5px dashed red';
+		}
+	}
+
+	function getCN() {
+
+		arr = [];
+// 		a = document.getElementByClassName('p')[3];
+// 		a = document.getElementsByClassName('p');
+// 		a.style.color = red;
+// 		for (i = 0; i < arr.length; i++) {
+// 			arr[i].style.border = '5px solid blue';
+// 		arr = document.querySelector('.p');
+// 		a = document.querySelector('.p');
+// 		a.style.fontWeight = 'bold';
+
+}
+	}
+</script>
+<style>
+div {
+	border: 5px dotted red;
+	margin: 10px;
+	padding: 10px;
+	height: auto;
+	/* 		내용에 따라서 높이를 자동으로 지정 */
+	width: 500px;
+}
+
+p {
+	border: 3px dashed blue;
+}
+</style>
+</head>
+<body>
+
+	<pre>
+	Ecma Script : 자바스크립트의 버전을 나타내는 표준 정의어 es2, es4, /es6 표준/, es8버전
+	
+	script에서 html요소로 접근하기
+	
+	id를 이용
+	 - document.getElementById('id') //es2버전, 더 효율적이다.
+	 - document.querySelector('#id') //es6버전, new 버전
+	 
+	tag명 활용
+	 - document.getElementsByTagName('태그명'[n])		//n번째 태그 선택
+	 - document.getElementsByTagNmae('태그명')	//모든 '태그명' 선택
+	 - document.querySelector('태그명')		//첫번째 '태그명'만 선택
+	 - document.querySelectorAll('태그명')		//모든 '태그명' 선택
+	 
+	class명 활용
+	 - document.getElementByClassName('클래스명')[n]	//n번째 클래스 선택
+	 - ducumnet.getElementByClassName('클래스명')		//모든 '클래스명' 선택
+	 - document.querySelector('.클래스명')			//첫번째 '클래스명'만 선택
+	 - document.querySelectorAll('.클래스명')		//모든 '클래스명' 선택
+	</pre>
+
+	<h3>getElementsByTagName / getElementsByClassName 예제</h3>
+	<div class="d">
+		첫번째 div1
+		<p class="p">첫번째 p1</p>
+		<p class="p">p2</p>
+		<p class="p">p3</p>
+		<p class="p">p4</p>
+		<p class="p">p5</p>
+	</div>
+	<div class="d">div2</div>
+	<div class="d">div3</div>
+	<div class="d">div4</div>
+
+	<input type="button" value="getElementsByTagName" onclick="getTN()">
+	<input type="button" value="getElementsByClassName" onclick='getCN()'>
+
+</body>
+</html>

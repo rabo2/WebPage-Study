@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      a{
+        text-decoration : none;
+      }
+      a:link{
+        /* 방문하기전 링크 상태 */
+        color : green;
+      }
+      a:visited{
+        /* 방문후 링크상태 */
+        color : red;
+      }
+      a:hover{
+        /* 커서를 올렸을 때 링크 상태 */
+        color : orange;
+        font-size : 1.5em;
+        text-decoration : underline;
+      }
+      a:active{
+        color : gray;
+        background : blue;
+      }
+      div{
+        border : 2px dotted orange;
+        padding : 20px;
+        margin : 20px;
+      }
+      .p1:hover{
+        background : lime;
+      }
+      .p2:nth-child(odd){
+        /* 홀수부분에만 적용 */
+        background : lightblue;
+      }
+      .p2:nth-child(even){
+        background : lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <pre>
+      의사클래스 - 가상클래스
+      상태나 구조에 의한 선택방법
+
+      상태 - :link, :visited, :hover, :active
+      구조 - :nth-child(n), :nth-child(odd)-홀수, :nth-child(even)-짝수
+      
+    </pre>
+    <div>
+      <a href="http://w3schools.com">w3스쿨</a>
+      <a href="http://www.ddit.or.kr">대덕인재개발원</a>
+      <a href="http://cgv.co.kr">CGV</a>
+      <a href="http://www.pizzagut.co.kr">피자헛</a>
+    </div>
+
+    <div>
+      <p class="p1">가나다라마바사</p>
+      <p class="p1">아자차카파타하</p>
+    </div>
+    <div>
+      <p class="p2">아자차카파타하</p>
+      <p class="p2">가나다라마바사</p>
+      <p class="p2">가나다라마바사</p>
+      <p class="p2">아자차카파타하</p>
+      <p class="p2">가나다라마바사</p>
+      <p class="p2">아자차카파타하</p>
+      <p class="p2">가나다라마바사</p>
+      <p class="p2">아자차카파타하</p>
+    </div>
+  </body>
+</html>
