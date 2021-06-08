@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      div{
+        border : 2px solid red;
+        width : 200px;
+        height : 100px;
+      }
+      #d2{
+        position : static;
+        top : 100px;
+        left : 100px;
+        background : yellow;
+      }
+      #d5{
+        position : relative;
+        top : 50px;
+        left : 50px;
+        background : yellow;
+      }
+      #d8{
+        position : absolute;
+        /* 스크롤을 이동할 때 위치가 이동하지 않는다. */
+        top : 200px;
+        left : 200px;
+        background : yellow;
+      }
+      #d11{
+        position : fixed;
+        /* 화면을 기준으로 고정, 스크롤을 화면에 같은 곳에 존재한다. */
+        top : 200px;
+        left : 200px;
+        background : yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <pre>
+    정적위치(static) : 정상적인 흐름에 따라 배치
+    </pre>
+    <div id="d1">d1</div>
+    <div id="d2">d2</div>
+    <div id="d3">d3</div>
+
+    <pre>
+    상대위치(relative) : 정적 위치를 기준으로 위치가 변경
+    </pre>
+    <div id="d4">d4</div>
+    <div id="d5">d5<br>
+      position : relative; <br>
+      top : 100px; <br>
+      left : 100px; <br>
+      크기 속성이 적용되지 않는다.
+    </div>
+    <div id="d6">d6</div>
+
+    <pre>
+    절대위치(absolute) : 컨테이너(윈도우)의 원점을 기준으로 위치 변경
+    </pre>
+    <div id="d7">d7</div>
+    <div id="d8">d8 <br>
+      position : absolute; <br>
+      top : 200px; <br>
+      left : 200px;</div>
+    <div id="d9">d9</div>
+
+    <pre>
+    고정위치(fixed) : 컨테이너(윈도우)의 원점을 기준으로 위치 변경
+    </pre>
+    <div id="d10">d10</div>
+    <div id="d11">d11 <br>
+      position : fixed; <br>
+      top : 200px; <br>
+      left : 200px;</div>
+    <div id="d12">d12</div>
+  </body>
+</html>

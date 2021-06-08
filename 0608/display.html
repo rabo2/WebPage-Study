@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      function proc(){
+        p2 = document.getElementById('p2');
+        p2.style.display = "block";
+
+        p1 = document.getElementById('p1');
+        p1.style.display = "none";
+      }
+    </script>
+    <style>
+      p{
+        width : 50%;
+        height : 200px;
+        border : 10px solid olive;
+      }
+      #p2{
+        display : none;
+        /* 영역을 없앤다 */
+      }
+      #p3{
+        visibility : hidden;
+        /* 눈에 보이지는 않지만 영역과 항목은 존재 */
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" name="" value="확인" onclick="proc()">
+
+    <p id="p1">가나다라1</p>
+    <p id="p2">가나다라2</p>
+    <p id="p3">가나다라3</p>
+    <p id="p4">가나다라4</p>
+  </body>
+</html>
