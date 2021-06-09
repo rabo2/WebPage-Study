@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    // var name = 'asdfasdf';
+    // console.log(name);
+    // var name = 'javascript';
+    // console.log(name);
+
+    // let name = 'asdfasdf';
+    // console.log(name);
+    // let name = 'javascript';
+    // console.log(name);
+    // 재선언 불가능
+
+
+    // let name = 'asdfasdf';
+    // console.log(name);
+    // name = 'javascript';
+    // console.log(name);
+    // 할당은 가능하다
+
+    const name = 'asdfasdf';
+    console.log(name);
+    // name = 'javascript';
+    console.log(name);
+    // 재선언 재할당 둘다 불가능
+
+  </script>
+</head>
+<body>
+    <pre>
+    var : function-scoped(함수범위)
+    변수 선언과 초기화(메모리에 할당)가 동시에 이루어진다
+    변수를 재선언해도 에러가 나지 않고 각기 다른 값을 출력한다.
+    유연한 변수 선언 방식으로 코드량이 많아질 경우에는 값이 변경되는 상황이 발생 가능
+
+    이것을 보안하기 위해 es6이후 추가된 변수 선언 방식이 let과 const이다.
+
+    let : block-scoped(블럭 범위)
+    변수 사용전까지 초기화 되지 않는다.
+    변수 재할당이 가능하지만 재선언은 불가하다.
+
+    const : block-scoped(블럭범위)
+    변수 사용전까지 초기화 되지않는다.
+    변수 재할당과 재선언이 불가하다.
+
+    let,const의 차이점은 immutable(불변)이다.
+
+    ==========================================
+    type error :
+
+    1. 자료형이 맞지 않아서 연산할 수 없을 때
+    2. 변경할 수 없는 값을 수정하려 할 때
+    3. 부적절한 방법으로 값을 사용하려고 할 때
+    ==========================================
+    </pre>
+
+</body>
+</html>

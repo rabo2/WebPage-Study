@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    //변수 Hoisting
+    console.log("a : "+a);
+    var a;
+    //출력보다 선언이 밑에 존재하지만 선언을 최상위로 끌어올림
+    //다만, undefined를 출력한다.
+    a = 'error가 나지 않음';
+    console.log("a : "+a);
+
+    //함수 Hoisting
+    showName();
+    /*
+    함수 선언문 : 함수선언이 var로 시작되듯이
+                   함수 선언도 function으로 시작
+                   선언된 함수는 나중 사용을 위해 저장되고 call될 때 실행된다.
+      Hoisting 가능
+    function showName(){
+       console.log(name);
+       var name = "bts";
+       console.log(name);
+    }
+    */
+
+    /* 함수 표현식 : 표현식을 사용해 함수를 정의할 수 있으며, 변수에 저장할 수 있다.
+       Hoisting불가
+       에러 발생
+
+    var showName = function(){
+        console.log(name);
+        var name = "소녀시대";
+        console.log(name);
+    }
+    */
+
+    // new Function 객체 생성, 거의 사용하지 않은
+    // Hoisting 불가, 에러 발생
+    var showName = new Function("", console.log("k11"));
+
+  </script>
+</head>
+<body>
+    <pre>
+    자바스크립트 고유의 특징 Hoisting
+    함수 안의 변수 선언을 최상단으로 끌어올려주는 javascript 고유기능
+    대상 : var, 함수선언문 (let, const, 함수표현식은 해당되지 않음)
+
+    변수 Hoisting : 변수가 선언되기 전 출력해도 에러발생하지 않음(undefined를 출력)
+    함수 Hoisting : 선언문 형태의 함수를 미리 호출해도 에러를 발생하지 않음
+
+    *javascirpt에서 지원하는 고유기능이지만 Hoisting의 영향을 최소화하는 것이
+    가독성, 유지보수 측면에서 좋음으로 let, const, 함수 표현식을 사용할 것을
+    권장한다.*
+    </pre>
+</body>
+</html>
