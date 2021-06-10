@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    function print(id, answer){
+      str = "정답 : "+ answer;
+      document.getElementById(id).innerHTML = str;
+    }
+
+    function proc1(){
+      sum = 0;
+      for(i = 1; i <= 10; i++){
+        sum += i;
+      }
+    print('q1', sum);
+    }
+    function proc2(){
+      sum = 0;
+      for(i = 1; i <= 200; i++){
+        if(i%2 != 0){
+          continue;
+        }
+        sum += i;
+      }
+    print('q2', sum);
+    }
+    function proc3(){
+      sum = 0;
+      while(true){
+        str = prompt("숫자를 입력하세요", "0을 입력하면 합산을 출력합니다.");
+        if(parseInt(str) == 0){
+          break;
+        }
+        sum += parseInt(str);
+      }
+      print('q3', sum);
+    }
+    function proc4(){
+      answer = "<br>";
+      for(i = 1; i <= 10; i++){
+        for(j = 1; j <= 10; j++){
+          if(((i+j)%3) != 0){
+            continue;
+          }else{
+            answer += i+" + "+j+" = "+(i+j)+"<br>";
+          }
+        }
+      }
+      print('q4', answer);
+    }
+    function proc5(){
+      str = "";
+      for(i = 1; i <= 100; i++){
+        if((i%2 == 0) && (i%3 == 0)){
+          str += i + " ";
+        }
+      }
+    print('q5', str);
+    }
+    function proc6(){
+      sum = 0;
+      while(true){
+        a = parseInt(prompt("첫번째 수 : ", "두 수 0을 입력하면 종료합니다."));
+        b = parseInt(prompt("두번째 수 : ", "두 수0을 입력하면 종료합니다."));
+        if(a == 0 && b == 0){
+          break;
+        }
+        if((a+b) < 100){
+          continue;
+        }else{
+          sum = a+b;
+          break;
+        }
+      }
+      print('q6', sum);
+    }
+
+  </script>
+  <style media="screen">
+    div{
+      border : 1px solid black;
+      width : 500px;
+      height : auto;
+      padding : 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>문제 1</h2>
+  <div id = "q1"><input type="button" value="Q1." onclick="proc1()"><br></div>
+  <h2>문제 2</h2>
+  <div id = "q2"><input type="button" value="Q2." onclick="proc2()"><br></div>
+  <h2>문제 3</h2>
+  <div id = "q3"><input type="button" value="Q3." onclick="proc3()"><br></div>
+  <h2>문제 4</h2>
+  <div id = "q4"><input type="button" value="Q4." onclick="proc4()"><br></div>
+  <h2>문제 5</h2>
+  <div id = "q5"><input type="button" value="Q5." onclick="proc5()"><br></div>
+  <h2>문제 6</h2>
+  <div id = "q6"><input type="button" value="Q6." onclick="proc6()"><br></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    div {
+      border : 1px solid red;
+    }
+  </style>
+  <script>
+    function proc(){
+      a = prompt("첫번째 사람 입력 : ", "가위-바위-보 중 입력하세요");
+      b = prompt("두번째 사람 입력 : ", "가위-바위-보 중 입력하세요");
+
+    if(a==b){
+      c = "비겼네요";
+    }else if((a == "가위" && b == "보")
+            ||(a == "바위" && b == "가위")
+            ||(a == "보"  && b == "바위")){
+      c = "첫번째 사람의 승리";
+    }else{
+      c = "두번째 사람의 승리";
+    }
+
+    str = `첫번째 사람 : ${a} <br>`;
+    str += `두번째 사람 : ${b} <br>`;
+    str += `결과  : ${c}`;
+
+    document.getElementsByTagName('div')[0].innerHTML = str;
+
+  }
+  </script>
+</head>
+<body>
+  <pre>
+    백틱(backtic) : 문자열과 변수의 값을 하나의 문자열 안에 기술하는 것
+    es6버전
+    백틱 문자열 안에 변수는 ${} 기호로 기술한다.
+    백틱을 이용해 만들어진 문자열을 템플릿 리터럴 이라고 한다.
+
+    ex) str = "첫번째 사람 : " + a + "&lt;br>";
+        str = `첫번째 사람 : ${a} &lt;br>`;
+  </pre>
+  <div>
+    <input type="button" value="게임" onclick="proc()">
+  </div>
+</body>
+</html>

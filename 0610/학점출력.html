@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    var su = prompt("성적 입력하세요", "100점 만점");
+
+    switch (parseInt(su / 10)) {
+      case 10:
+        document.write("A");
+        break;
+      case 9:
+        document.write("A");
+        break;
+      case 8:
+        document.write("B");
+        break;
+      case 7:
+        document.write("C");
+        break;
+      case 6:
+        document.write("D");
+        break;
+      case 5:
+      case 0:
+        document.write("F");
+        break;
+      default:
+        document.write("알 수 없는 점수");
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

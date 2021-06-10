@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    //할당 연산자(=)
+    var x = 10;
+    console.log(x);
+    var x;
+    console.log(x=10);
+
+    //수식에 여러 할당 연산자가 나타나면 해당 연산자들은 오른쪽에서 왼쪽으로 평가된다.
+    x = y = z = 10;
+    console.log(x);
+    console.log(y);
+    console.log(z);
+
+    // 연산이 포함된 할당
+    // + 연산자는 숫자보다 문자열 우선수위가 높다.
+    // 따라서 피연산자 중 문자열이 있다면 다른 피연산자도 문자열로 변환된다.
+    // 숫자가 아닌 피연산자에 (-) 연산자를 사용하면 피연사나를 숫자로 변환하려고 시도.
+    var x = 10;
+    console.log(x += 5);
+    console.log(x -= 5);
+    console.log(x *= 5);
+    console.log(x /= 5);
+    console.log(x %= 5);
+    console.log(x += '5'); //문자열로 반환
+    console.log(x -= '5'); //숫자로 뺄셈 연산
+  </script>
+</head>
+<body>
+
+</body>
+</html>

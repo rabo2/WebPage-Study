@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    div {
+      border: 1px dotted olive;
+      width: 500px;
+      height: auto;
+      padding: 10px;
+
+    }
+
+    td {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+    }
+  </style>
+  <script type="text/javascript">
+    function proc1() {
+      sum = 0;
+      for (i = 0; i <= 100; i++) {
+        sum += i;
+        document.getElementById('rst1').textContent = sum;
+      }
+    }
+
+    function proc2() {
+
+      timeTable = prompt("단을 입력하세요");
+      multiple = "";
+
+      for (i = 1; i < 10; i++) {
+        multiple += `${timeTable} * ${i} = ${timeTable*i} <br>`;
+      }
+      document.getElementById('rst2').textContent = multiple;
+    }
+
+    function proc3() {
+      str = "<table border='1'>";
+        //한줄의 코드에 "" '' 동시에 존재할 경우 같은 종류로 통일하면 안된다.
+      for (i = 1; i < 10; i++) {
+        str += "<tr>"
+        str += "<td>" + i + "</td>";
+
+        for (j = 2; j < 10; j++) {
+          str += "<td>" + (i * j) + "</td>"
+        }
+        str += "</tr>";
+      }
+      str += "</table>";
+      document.getElementById('rst3').innerHTML = str;
+    }
+  </script>
+</head>
+
+<body>
+
+  <h2>1부터 100까지 합 구하기</h2>
+  <input type="button" value="확인" onclick="proc1()">
+  <div id="rst1"></div>
+
+
+  <h2>prompt를 이용해 단을 입력받아서 구구단 출력하기</h2>
+  <input type="button" value="확인" onclick="proc2()">
+  <div id="rst2"></div>
+
+
+  <h2>테이블에 구구단 출력하기(중첩 for2)</h2>
+  <input type="button" value="확인" onclick="proc3()">
+  <div id="rst3"></div>
+
+</body>
+
+</html>
