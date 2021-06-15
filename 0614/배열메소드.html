@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div{
+	border : 1px dotted lime;
+	margin : 20px;
+}
+</style>
+<script>
+arr = ['유진초이','고애신','구동매','이양화','김희성','고애신','이완익','함안댁','김은대'];
+
+function proc1(){
+	
+	idx = arr.indexOf("구동매");
+	
+	str = "indexOf로 검색 : ";
+	str += "찾는 이름 " + "구동매는";
+	str += idx + "번째에 있습니다<br><br>";
+	
+	document.getElementById('rst1').innerHTML = str;
+}
+
+//람다식
+proc2 = ()=>{
+	
+	idx = arr.lastIndexOf("고애신");
+	
+	str = "lastIndexOf로 검색 : ";
+	str += "찾는 이름 " + "고애신은";
+	str += idx + "번째에 있습니다<br><br>";
+	
+	document.getElementById('rst2').innerHTML = str;
+}
+
+proc3=()=>{
+	str = "indexOf : 이름이 여러개인 경우 모두 찾기<br>";
+	a = "고애신";
+	idx = 0;
+	str_idx = "";
+	
+	while(true){
+		idx = arr.indexOf(a,idx);
+		if(idx == -1) break;
+		
+		str_idx += idx +"번째에";
+		idx++;	//찾은 index 이후부터 찾기
+	}
+	str += "찾는 이름 : " + a + "<br>";
+	str += str_idx + "있습니다<br>";
+	
+	document.getElementById('rst3').innerHTML = str;
+}
+
+proc4=()=>{
+	a = prompt("이름을 입력하세요");
+	idx = arr.indexOf(a);
+	
+	str = "";
+	if(idx == -1){
+		str += "찾는 이름 없습니다";
+	}else{
+		str += a + "님은 " + idx + "번째에 있습니다 ";
+		str += "<a href='detail.jsp?name=" + a + "'>상세보기</a>";
+	}
+	document.getElementById('rst4').innerHTML = str;
+}
+
+
+</script>
+</head>
+<body>
+<pre>
+indexOf(value, start)
+: value-필수요소, 찾을 문자열 / start-선택요소, 검색을 시작할 index
+  입력하지 않으면 처음부터 검색
+
+lastIndexOf(value, start)
+: value-필수요소, 찾을 문자열 / start-선택요소, 검색을 끝낼 index
+  입력하지 않으면 끝까지 검색
+
+대소문자를 구분하며, 찾는 문자열이 없을땐 -1을 return
+</pre>
+
+<p>arr = ['유진초이','고애신','구동매','이양화','김희성','고애신','이완익','함안댁','김은대']</p>
+
+<input type="button" value="indexOf" onclick="proc1()">
+<input type="button" value="lastIndexOf" onclick="proc2()">
+<input type="button" value="indexOf" onclick="proc3()">
+<input type="button" value="indexOf" onclick="proc4()">
+
+<div id="rst1"></div>
+<div id="rst2"></div>
+<div id="rst3"></div>
+<div id="rst4"></div>
+
+</body>
+</html>

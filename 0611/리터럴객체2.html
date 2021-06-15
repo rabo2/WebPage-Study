@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var circle  = {
+      radius : 10,
+      getArea : function(){
+        return Math.pow(this.rad,2) * Math.PI;
+      },
+      getCircum : function(){
+        return 2 * this.radius * Math.PI;
+      }
+    }
+    res = "";
+    while(true){
+      //반지름 입력받기 - prompt
+      circle.radius = prompt("반지름 입력 : ");
+
+      res += `반지름 : ${circle.radius} <br>`;
+      res += `면적 : ${circle.getArea()} <br>`;
+      res += `둘레 : ${circle.getCircum()} <br><br>`;
+
+      //동적 속성 추가
+      circle.name = "동그라미";
+      res += `이름 : ${circle.name10}`;
+
+      //동적 메소드 추가
+      circle.getDiam = function(){
+        return 2 * this.rad;
+      }
+      res += `원지름 : ${circle.getDiam()}`;
+
+      //동적 속성 삭제
+      res += `이름 속성 삭제 전 : ${circle.name}<br><br>`;
+      delete circle.name;
+      res += `이름 속성 삭제 후 : ${circle.name}`;
+
+      //동적 메소드 삭제
+      //=>삭제 변수에 대해서는 작동하지만 함수에는 작동하지 않음.
+      res += `원지름 메소드 삭제 전 : ${circle.getDiam()}<br>`;
+      delete circle.getDiam();
+      res += `원지름 메소드 삭제 후 : ${circle.getDiam()}<br>`;
+      /*
+      delete는 단순히 객체와 속성의 연결을 끊을 뿐 실제로 메모리에서 제거되는 것은
+      아니다. delete하고 싶은 값을 null이나 undefined로 설정하는 것을 추천한다.
+      key가 삭제되는 것이 아니라서 key가 드러나는 경우가 발생할 경우는
+      value === undefined로 체크해서 구분한다.
+      */
+
+      //confirm
+      conf = confirm("계속 입력하시겠습니까");
+      if(!conf) break;
+    }
+
+    window.onload = function(){
+      document.getElementById('rst').innerHTML = res;
+    }
+  </script>
+</head>
+<body>
+  <pre>
+    Circle객체 생성 - 리터럴에 의한 객체
+    속성 : 반지름
+    메소드 : 면적 구하기 (반지름 ** 2 *3.14)
+            둘레 구하기(2 * 반지름 * 3.14)
+  </pre>
+
+  <div id="rst">
+
+  </div>
+</body>
+</html>

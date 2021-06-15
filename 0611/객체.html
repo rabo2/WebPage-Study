@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    //객체 리터럴 방식(Object Literal)
+    var myObj = {
+      name : '아이유',
+      age : 25,
+      hello : function(){
+          return `이름은 ${this.name} 이고, 나이는 ${this.age}입니다.`;
+      }
+    };
+    console.log(myObj);
+
+    //생성자 방식(Constructor) : new Constructor()방식으로 객체를 생성
+    //1. new Object() : new 연산자를 통해 Object객체의 생성자 함수를 호출한다.
+    var myObj = new Object();
+    myObj.name = '아니유';
+    myObj.age = 20;
+    myObj.hello = function(){
+      return `이름은 ${this.name} 이고, 나이는 ${this.age}입니다.`;
+    }
+    console.log("생성자 방식 1. new Object() : " + myObj);
+
+    //2. new 생성자() : Number, String, Array 등의 내장 객체도 생성할 수 있다.
+    var strObj = new String('hello'); //String객체 생성
+    console.log(strObj);
+    var arrObj = new Array([1,2,3]); //Array 객체 생성
+    console.log(arrObj);
+
+    //3. new 사용자 정의 생성자() : 직접 생성자 함수를 만들어 객체를 생성할 수 있다.
+    //생성자 함수 만들기
+    var SelfObj = function(name, age){
+      this.name = name;
+      this.age = age;
+      this.hello = function(){
+        return `이름은 ${this.name}이고, 나이는 ${this.age}입니다.`;
+      }
+    }
+    var selfObj = new SelfObj('IU', 29);
+
+    console.log("생성자 방식 3. new 사용자 정의 생성자() : "+ selfObj.hello());
+
+
+    //생성자 함수를 통한 객체 생성하기
+
+</script>
+</head>
+<body>
+  <pre>
+    객체 생성 방법 3가지
+    1. 객체 리터럴 방식(Object Literal)
+    2. 생성자함수
+    <!-- 3. Object.create(프로토타입) : 프로토타입 상속을 통해 객체를 만드는 방식(프로토타입, 상속등의 개념이 필요) -->
+
+    프로퍼티/메소드 접근 방법
+    1. 객체.key : 마침표(.)로 프로퍼티에 접근한다.
+    2. 객체['key'] : 대괄호([]) 사이에 키 값을 '문자열'로 넣어 접근한다.
+      - 객체[key]방식은 key가 다옴표로 감싸져 있지 않으면 변수로 해석해서 참조한다.
+     ex) var key_age = 'age';
+         myObj[key_age];
+
+  </pre>
+</body>
+</html>

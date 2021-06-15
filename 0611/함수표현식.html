@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    //익명(무명)함수
+    var sum = function(a,b){
+      var m = a+b;
+      return m;
+    }
+    console.log("익명>>"+sum(1,2)); //결과 3
+
+    //기명 함수 표현식
+    var sum = function plus(a,b){
+      return a + b
+    }
+    // console.log("기명 >>" + plus(1,2)); // 함수명 호출 error 발생
+    console.log("기명>>"+sum(1,2));
+    /*
+    함수 표현식에서 사용된 함수 이름은 외부코드에서 접근할 수 없다.
+    대신 정의된 함수 내부에서만 재귀적으로 사용 가능하다.
+    */
+
+    //함수표현식의 함수이름을 재귀적으로 사용
+    const sayBye = function func(who){
+      if(who){
+        alert("hello"+who);
+      }else{
+        func('Guest');//함수명 재귀 호출
+      }
+    }
+   sayBye('405호');
+
+   //함수선언문
+   function sum1(x, y){
+     return x+y;
+   }
+   console.log(sum1(7,3));
+
+/*
+ 자바스크립트 엔진이
+ var sum1 = function sum1(x,y){
+   return x+y;
+}
+로 변경해줌*/
+
+console.log(sum1(7,3));
+
+/* 함수 선언문에서 사용된 함수 이름은 외부에서 사용 가능하다
+선언문의 코드를 자바스크립트 엔진이 표현식으로 변경해주기 때문이다*/
+
+  </script>
+</head>
+<body>
+  <h3>함수 표현식에서의 익명(무명)함수와 기명함수</h3>
+
+
+</body>
+</html>

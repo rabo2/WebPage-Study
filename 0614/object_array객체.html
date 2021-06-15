@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 리터럴 객체 생성을 권장하는 이유 2. 속도가 빠름
+    console.time('using[]')
+      for(i = 0; i < 200000; i++){
+        arr = []
+      };
+    console.log('using[]');
+
+    console.time('using new')
+      for(i = 0; i < 200000; i++){
+        arr = new Array;
+      };
+    console.log('using new');
+  </script>
+</head>
+<body>
+  <h3>new Object 와 {} 생성</h3>
+  <pre>
+    let obj1 = new Object();  //new 연산자를 이용해 객체생성
+    let obj2 = {};           //객체 리터럴로 객체 생성(내부적으로 new Object호출)
+
+    리터럴 객체 생성을 권창하는 이유
+    1. 코딩 시 가독성이 좋음
+    2. 속도가 빠름
+    3. JavaScript의 오버라이딩을 방지(new Object()는 오버라이딩이 가능하므로 위험)
+
+    <h3>new Array와 []생성</h3>
+
+    let arr = new Array();
+    let arr = [];
+
+    직관적인 리터럴 객체생성을 더 선호 한다.
+
+    <h3>배열과 객체의 차이</h3>
+
+    배열 : []에 직접 선언할 수 있따.
+    const info = ['a', 'b' ,'c','d'];
+
+    객체 : {}안에 선언할 수 없고 key:value값으로 이루어져 있다.
+    const info = {
+
+    }
+  </pre>
+</body>
+</html>

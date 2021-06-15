@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var rectangle = {
+      width : 10,
+      height : 12,
+      getArea : function(){
+        area = this.width * this.height;
+        return area;
+      },
+      getCircum : function(){
+        // cc = (this.width + this.height) * 2;
+        return (this.width + this.height) * 2;
+      }
+    }
+
+
+
+    //출력
+    res = `가로 : ${rectangle.width} <br>`;
+    res += `세로 : ${rectangle.height} <br>`;
+    res += `면적 : ${rectangle.getArea()} <br>`;
+    res += `둘레 : ${rectangle.getCircum()} <br>`;
+
+    //속성을 동적으로 추가
+    rectangle.color = 'red';
+    res += `색상 : ${rectangle.color} <br>`
+
+    window.onload = function(){
+      document.getElementById('d1').innerHTML = res;
+      //script가 먼저 실행되고 body태그가 실행되기 때문에
+      //메소드는 'd1'을 찾지만 null값이 들어오게 된다.
+      //그렇기 때문에 window.onload라는 코드를 이용하여 body태그가 먼저 실행되게
+      //설정한다.
+    }
+    function change(){
+      rectangle.width = parseInt(prompt("가로 값을 입력 : "));
+      rectangle.height = parseInt(prompt("세로 값을 입력 : "));
+      res = `가로 : ${rectangle.width} <br>`;
+      res += `세로 : ${rectangle.height} <br>`;
+      res += `면적 : ${rectangle.getArea()} <br>`;
+      res += `둘레 : ${rectangle.getCircum()}`;
+
+      document.getElementById('d2').innerHTML = res;
+    }
+
+  </script>
+</head>
+<body>
+  <h3>rect클래스 생성</h3>
+  <div id="d1"></div>
+
+  <h3>rect클래스 속성 변경</h3>
+  <input type="button" value="변경" onclick="change()">
+  <div id="d2"></div>
+</body>
+</html>

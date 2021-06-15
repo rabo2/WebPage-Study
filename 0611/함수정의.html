@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    function proc1(a){
+      //input에서 값 가져오기 - value
+      x = parseInt(document.getElementById('x').value);
+      y = parseInt(document.getElementById('y').value);
+
+      //비교하여 연산하기
+      //각 사칙연산의 함수를 호출
+      switch (a) {
+        case '+':
+          res = add();
+          break;
+        case '-':
+          res = sub();
+          break;
+        case '*':
+          res = multi();
+          break;
+        case '/':
+          res = div();
+          break;
+      }
+
+      //출력
+      document.getElementById('res').value = res;
+      document.getElementById('sp1').innerHTML = x;
+      document.getElementById('sp2').textContent = y;
+      document.getElementById('sp3').innerHTML = res;
+    }
+
+    //함수 정의 - return값
+    function add(){
+      return x + y;
+    }
+    function sub(){
+      return x - y;
+    }
+    function multi(){
+      return x * y
+    }
+    function div(){
+      return x / y;
+    }
+  </script>
+  <style>
+    label{
+      display : inline-block;
+      width : 200px;
+      height : 50px;
+    }
+
+    form{
+      border : 2px solid blue;
+      margin : 10px;
+      padding : 10px;
+    }
+
+    span{
+      background : yellow;
+      border : 1px dotted red;
+    }
+  </style>
+</head>
+<body>
+  <pre>
+  innerHTML : 출력내용에 html태그를 실행하여 출력
+
+  textContent : 출력내용에 html태그를 문자취급하여 출력
+  value를 이용한 get, set
+  get : document.getElementById('id').value
+  set : document.getElementById('id').value = 출력할 값
+  </pre>
+
+  <form>
+    <h3>입력</h3>
+    <label>첫번째</label><input name="x" id="x"><br>
+    <label>두번째</label><input name="y" id="y"><br>
+    <label>결과</label><input name="res" id="res">
+
+    <input type="button" value="+" onclick="proc1('+')">
+    <input type="button" value="-" onclick="proc1('-')">
+    <input type="button" value="*" onclick="proc1('*')">
+    <input type="button" value="/" onclick="proc1('/')">
+
+    <br><br>
+    <h3>결과</h3>
+    <p><label>첫번째 값</label><span id="sp1"></span></p>
+    <p><label>두번째 값</label><span id="sp2"></span></p>
+    <p><label>결과 값</label><span id="sp3"></span></p>
+  </form>
+
+</body>
+</html>
