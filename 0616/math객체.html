@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    p[id = "message3"]{
+      width: 200px;
+      height: 250px;
+      background: yellow;
+      border: 1px solid red;
+      overflow : auto;
+    }
+  </style>
+  <script>
+    const random = parseInt(Math.random() * 100 + 1);
+    invals = ""; //입력 값 누적변수
+    count = 0; //횟수 변수
+
+    function test() {
+      hint = ""; //힌트 변수
+      res = ""; //출력 변수
+
+      input = document.getElementById('number').value;
+      invals += input + " ";
+
+      if (input == random) {
+        count++;
+        res = "총 횟수 :" + count + "<br>";
+        res += "입력 값 들 :" + invals + "<br>";
+        document.getElementById('message').innerHTML = res;
+      } else if (input < random) {
+        count++;
+        hint = "더 큼";
+        document.getElementById('message').innerHTML = hint;
+      } else if (input > random) {
+        count++;
+        hint = "더 작음";
+        document.getElementById('message').innerHTML = hint;
+      }
+    }
+
+    function test2() {
+      arr = ["가위", "바위", "보"];
+      rnd = parseInt(Math.random() * 3);
+
+      com = arr[rnd];
+      user = prompt("가위바위보 입력 : ")
+
+      res = "com : " + com + "<br>";
+      res += "user : " + user + "<br>";
+
+      if (com == user) {
+        res += "비겼습니다.";
+      } else if (com == '가위' && user == '보' ||
+        com == '바위' && user == '가위' ||
+        com == '보' && user == '바위') {
+        res += "컴퓨터 승리";
+      } else {
+        res += "내가 이김~";
+      }
+      document.getElementById('message2').innerHTML = res;
+    }
+
+    function test3(){
+
+      lotto = new Array();
+
+      //1~45까지 랜던 6개번호, 중복불가
+      for(i = 0; i < 6; i++){
+        lottoRandom = parseInt(Math.random()*45 + 1);
+
+        //중복불가
+        if(lotto.indexOf(random) == -1){ //중복 안될 때
+          lotto[i] = lottoRandom;
+          console.log("if >>" + lotto.indexOf(lottoRandom) + " , " + lottoRandom + "/ i :" + i);
+        }else{
+          i--;
+          console.log("if >>" + lotto.indexOf(lottoRandom) + " , " + lottoRandom + "/ i :" + i);
+        }
+      }
+      lotto.sort(function(a,b){
+        return a-b;  //오름차순
+      });
+      document.getElementById('message3').innerHTML += lotto + "<br>";
+    }
+  </script>
+</head>
+
+<body>
+
+  <h3>Number Guess</h3>
+  <h5>1~100 사이 숫자를 입력하시요</h5>
+  <input type="text" id="number">
+  <button type="button" onclick="test()">숫자추측</button>
+  <p id="message"></p>
+
+  <h3>가위, 바위, 보 게임(컴퓨터는 랜덤 발생)</h3>
+  <button type="button" onclick="test2()">확인</button>
+  <p id="message2"></p>
+
+  <h3>로또</h3>
+  <button type="button" onclick="test3()">확인</button>
+  <p id="message3"></p>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+
+//난수를 발생하는 메소드, 0 ~ 1(1 미포함) 구간에서 부동소수점의 난수를 생성
+
+// 0 <= random < 1
+document.write("0 <= random < 1 //////// " + Math.random() + "<br><br>" );
+
+// 0 , floor : 소수점 이하 버림
+document.write(" 0 //////// " + Math.floor(Math.random() ) + "<br><br>" ); 
+
+// 0 <= random <= 9
+document.write("0 <= random <= 9 //////// " + Math.floor( Math.random() * 10 ) + "<br><br>" ); 
+
+// 0 <= random <= 10
+document.write("0 <= random <= 10 //////// " + Math.floor( Math.random() * 11 ) + "<br><br>" ); 
+
+// 0 <= random <= 99
+document.write("0 <= random <= 99 //////// " + Math.floor( Math.random() * 100 ) + "<br><br>" ); 
+
+// 0 <= random <= 100
+document.write("0 <= random <= 100 //////// " + Math.floor( Math.random() * 101 ) + "<br><br>" ); 
+
+// 1 <= random <= 10
+document.write("1 <= random <= 10 //////// " + ( Math.random() * 10 ) + 1  + "<br><br>" ); 
+
+// 2 <= random <= 5
+document.write("2 <= random <= 5 //////// " + Math.floor( Math.random() * 4 + 2 )  + "<br><br>" ); 
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

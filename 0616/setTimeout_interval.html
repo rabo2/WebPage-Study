@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div{
+   height:200px;
+}
+</style>
+<script>
+function proc1(){
+
+   setTimeout(function(){
+      r1 = document.getElementById('rst1');
+      r1.style.background = 'yellow';
+   }, 2000);      // 2초 후에 배경화면 스타일 지정
+}
+
+proc2=(btn)=>{   // 람다식에서는 this를 변수로 사용할수 없다.
+
+//    this.style.display = "none";
+   rebtn = btn;
+   btn.style.display = "none";
+
+   r2 = document.getElementById('rst2');
+
+   a = setInterval(function(){
+
+      console.log(a);
+
+      cr = parseInt(Math.random() * 256);
+      cg = parseInt(Math.random() * 256);
+      cb = parseInt(Math.random() * 256);
+
+      r2.style.background = `rgb(${cr}, ${cg}, ${cb})`;
+
+   }, 500);
+
+}
+function proc3(){
+
+   rebtn.style.display = "inline";
+   clearInterval(a);
+
+}
+</script>
+</head>
+<body>
+
+<input type="button" value="setTimeout" onclick="proc1()">
+   <div id="rst1">
+      setTimeout(fn, sec) : sec에 지정된 시간이 경과하면 배경색을 바꾼다.
+   </div>
+
+   <br><br>
+
+<input type="button" value="setInterval" onclick="proc2(this)">
+<input type="button" value="setInterval_종료" onclick="proc3()">
+   <div id="rst2">
+      setInterval(fn, sec) : sec에 지정된 시간이 경과될 때마다 배경색을 바꾼다.<br>
+      random()메소드를 사용하여 배경색을 지정
+   </div>
+
+</body>
+</html>

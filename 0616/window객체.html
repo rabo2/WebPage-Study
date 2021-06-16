@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function proc1(){
+      window.open();
+    }
+
+    function proc2(){
+      window.open("winsub.html", "_blank", "width=500 height = 300 left = 30 top = 20");
+      //open(URL, name, specs)
+      //새로운 창의 경로와 , 크기 , 위치를 지정
+    }
+  </script>
+</head>
+<body>
+  <input type="button" value="확인" onclick="proc1()">
+  <pre>
+    버튼클릭하여 새로운 창 열기(winsub.html)
+    새로운 창(자식)
+    현재창 (부모)
+  </pre>
+
+  <input type="button" value="확인" onclick="proc2()">
+
+</body>
+</html>
