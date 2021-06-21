@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+	function proc1(t){
+// 		$(t).hide();
+// 		t.style.color = 'blue'; //t는 script의 변수이므로 jQuery에서 사용하려면
+		$(t).css('color', 'red');//jQuery의 객체로 만들어야한다.
+	}
+	$(function(){//$(document).ready(function(){}); 과 같은 기능, 간편식
+		$('#jqd h2').on('click',function(){
+			//this = 선택한 요소
+			$(this).hide();
+			
+			if($('#jqd h2:visible').length < 1){
+				//div 하위 h2가 모두 안보일 때 버튼을 보이게 함
+				$('#jqd button').show();
+			}
+		});
+// 		$('button') = $('#jqd button') //여러개의 버튼이 있을 경우, 해당영역을 지정
+		$('#jqd button').on('click', function(){
+			$('#jqd h2').show();
+			$(this).hide();
+		});
+	});
+</script>
+<style>
+	button{
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<h2 onclick = "proc1(this)">클릭하면 사라집니다.1</h2>
+	<h2 onclick = "proc1(this)">클릭하면 사라집니다.2</h2>
+	<h2 onclick = "proc1(this)">클릭하면 사라집니다.3</h2>
+	<h2 onclick = "proc1(this)">클릭하면 사라집니다.4</h2>
+	<h2 onclick = "proc1(this)">클릭하면 사라집니다.5</h2>
+	<h2 onclick = "proc1(this)">클릭하면 사라집니다.6</h2>
+	<h2 onclick = "proc1(this)">클릭하면 사라집니다.7</h2>
+	
+	<br><br>
+	<div id="jqd">
+		<h2>클릭하면 사라집니다.1</h2>
+		<h2>클릭하면 사라집니다.2</h2>
+		<h2>클릭하면 사라집니다.3</h2>
+		<h2>클릭하면 사라집니다.4</h2>
+		<h2>클릭하면 사라집니다.5</h2>
+		<h2>클릭하면 사라집니다.6</h2>
+		<h2>클릭하면 사라집니다.7</h2>
+		<button type="button">보이기</button>
+	</div>
+</body>
+</html>
