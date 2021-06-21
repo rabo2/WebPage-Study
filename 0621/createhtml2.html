@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+	
+	$('#box1 input').on('click', function(){ //후손중에 input태그
+		newPtag = $("<p title='hello' onclick='proc1(this)'>HELLO JQUERY!!</p>");
+//		$('#box1 #rst1').append(newPtag);//자식.appendTo(부모)
+		newPtag.appendTo('#box1 #rst1'); //부모.append(자식)
+	});  
+	
+	$('#box2 input').on('click', function(){ 
+		newPtag = $("<p></p>", {  //p태그 속성없이 일단 p태그만 만듬 속성 묶어주기~
+			'title' : 'hello',
+			'text'  : 'HELLO jQuery',
+			'click' : function(){
+				$(this).css('font-size', '2.0em').css('color', 'lime');	
+			} //프로퍼티 끝
+		});
+		$('#box2 #rst2').append(newPtag); //appned 다음에 (자식요소)
+	});
+	
+});
+
+function proc1(p) {
+	$(p).css('font-size', '1.5em').css('color', 'pink');
+	
+}
+</script>
+</head>
+<body>
+
+	<div class="box" id="box1">
+		<input type="button" value="새 요소 생성">
+		<div id="rst1"></div>	
+	</div>
+
+	<div class="box" id="box2">
+		<input type="button" value="새 요소 생성">
+		<div id="rst2"></div>	
+	</div>
+	
+
+
+
+</body>
+</html>

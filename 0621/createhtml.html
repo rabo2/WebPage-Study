@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+	$('#btn1').on('click', function(){
+		 vimg = $("<img src='../images/Koala.jpg'>");
+		 
+		 $('#rst1').html(vimg); //html이 아니라 text로하면 object라고 찍힘
+	});
+
+});
+
+</script>
+</head>
+<body>
+
+
+	<input type="button" id="btn1" value="확인">
+    <div id="rst1"></div>
+
+
+</body>
+</html>

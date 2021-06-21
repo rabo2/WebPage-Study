@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+   $(function() {
+      $('body', function(){
+         newTag = $("<input type = 'button' value = '이미지 추가' onclick = 'proc1()'><div id = 'img1'></div>");
+         $('body').append(newTag);
+         
+      });
+   });
+   
+   function proc1() {
+      $('#img1', function(){
+         newTag = $("<div><img src = '../images/가구1.jpg' alt = '가구' class = 'img2' onclick = 'proc2()'></div>");
+         $('#img1').append(newTag)
+         $('.img2').css('width', 300).css('heigh', 200).css('margin', 40);
+      })
+   }
+   
+   function proc2() {
+      $('.img2').css('border', '2px solid red');
+   }
+</script>
+</head>
+<body>
+</body>
+</html>
