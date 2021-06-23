@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+// 		$('td:first-child').css('background','#bbdefb');
+// 		$('td:nth-child(2)').css('background','#d1c4e9');
+// 		$('td:nth-child(3)').css('background','#f0f4c3');
+// 		$('td:nth-child(4)').css('background','#bbdefb');
+// 		$('td:nth-child(5)').css('background','#d1c4e9');
+// 		$('td:nth-child(6)').css('background','#f0f4c3');
+// 		$('td:nth-child(7)').css('background','#bbdefb');
+// 		$('td:last-child').css('background','#f0f4c3');
+	
+		//배경색 넣기 방법 2(nth-child(n+1)) 배수 + 시작자릿수
+		 $('td:nth-child(2n)').css('background','#d1c4e9');
+		 $('td:nth-child(2n+1)').css('background','#f0f4c3');
+		
+		//첫번째 행 배경색 바꾸기 1
+		$('#tb1 tr td').slice(0,8).css('background','#bbdefb');
+		$('#tb1 tr td').slice(2,6).css('background','#f0f4c3');
+		
+		//첫번째 행 배경식 바꾸기 2
+		$('tr:first-child td').css('background','#f48fb1').css('color','#f0f4c3')
+	
+	});
+</script>
+<style>
+th{
+	width: 200px;
+	height: 30px;
+	padding: 5px;
+	text-align: center;
+}
+td {
+	width: 200px;
+	height: 30px;
+	padding: 5px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<table border="1" id="tb1">
+		<tr>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+		</tr>
+		<tr>
+			<td>two</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>three</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>four</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+</body>
+</html>

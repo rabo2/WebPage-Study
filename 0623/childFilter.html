@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//리스트의 첫번째 아이템에만 노란 배경색
+		$('li').first().css('background', 'yellow');
+		//각 리스트의 첫 번째 아이템에만 빨간색 테두리 넣기
+		$('li:first-child').css('border','2px solid red');
+		//리스트의 마지막 아이템에만 초록색 배경색 넣기
+		$('li').last().css('background','green');
+		//각 리스트의 마지막 아이템에만 파란색 테두리 넣기
+		$('li:last-child').css('border','2px dotted blue');
+	})
+</script>
+</head>
+<body>
+	<div>
+		<h4>배달음식 인기순위</h4>
+		<ol>
+			<li>1.치킨</li>
+			<li>2.중식</li>
+			<li>3.피자</li>
+			<li>4.족발보쌈</li>
+			<li>5.분식</li>
+		</ol>
+
+		<h4>선호하는 치킨 브랜드</h4>
+		<ol>
+			<li>1.교촌</li>
+			<li>2.굽네</li>
+			<li>3.BHC</li>
+			<li>4.BBQ</li>
+			<li>5.네네</li>
+		</ol>
+	</div>
+	
+
+
+</body>
+</html>

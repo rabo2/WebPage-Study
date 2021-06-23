@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+	$(function() {
+		$('#rst1 select').on('change', function() {
+			op = "";
+			$('option:selected').each(function() { //option부분에 셀렉트되어있는부분 반복적으로 가져와라
+				op += $(this).val() + " "; //" " 한칸씩 띄우기 위해 공백넣어줌  
+			});
+			$('#rst1 div').html(op); //아래쪽에 있는 div에 html에 op를 넣어주기
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="rst1">
+		<form>
+			<select multiple size="7">
+				<option>개나리</option>
+				<option>진달래</option>
+				<option selected>민들레</option>
+				<option>무궁화</option>
+				<option>철쭉</option>
+				<option selected>목련</option>
+				<option>왕벚꽃</option>
+			</select>
+		</form>
+		<div></div>
+	</div>
+
+</body>
+</html>

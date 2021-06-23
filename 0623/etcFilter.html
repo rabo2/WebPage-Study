@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+   
+   $('input[value="hidden"]').on('click',function(){   //버튼이 히든인 놈을 선택한다~
+      res = "<h3>hidden</h3>";
+      $(':hidden','#testForm').each(function(){  // 셀렉터는 앞에, 범위는 뒤에
+      res += "태그 : " + $(this).prop("tagName")
+        + " / 유형 : " + this.type
+        + " / name : " + $(this).attr("name")
+        + " / value : " + $(this).val() 
+        + " / html : " + $(this).html() 
+        + "<br>"   
+      }); 
+      $('#hidden').html(res);
+   });
+   
+   $('form *:visible').on('click', function() {
+	 res ="<h3>visible</h3>";
+	 $(':visible', '#testForm').each(function() {
+	     res += "태그 : " + $(this).prop("tagName")
+	        + " / 유형 : " + this.type
+	        + " / name : " + $(this).attr("name")
+	        + " / value : " + $(this).val() 
+	        + " / html : " + $(this).html() 
+	        + "<br>"  
+		});
+	   $('#visible').html(res);
+	});
+});
+</script>
+</head>
+<body>
+   
+   <input type="button" value="hidden">
+   <input type="button" value="visible">
+
+    <form id="testForm">
+        <input type="hidden" name="userAge" value="33"> 
+        <!-- 히든이라서 안보여~ 값은 나중에jsp에서 리퀘스트겟파라미터 유저에이지, 유저시티 찍으면 보임 -->
+       
+        <input type="hidden" name="userCity" value="대전">
+        
+        I D : <input type="text" name="userID" value="hong">
+        <span style="display: none;">ID가 중복됩니다</span> <br>
+        
+        이 름 : <input type="text" name="userName" value="홍길동">
+        <span style="visibility: hidden;">이름을 입력하세요</span> <br>
+        
+        성 별 : <input type="radio" name="gender" value="남" checked>남자
+        <input type="radio" name="gender" value="여">여자
+    </form>
+
+   <div id="hidden"></div>
+   <div id="visible"></div>
+</body>
+</html>
