@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('p').on('click', function() {
+			str = $(this).text();
+			str2 = $(this).attr('title');
+			img = "<img src = '../images/"+str+".jpg' alt = '"+str2+"' width = 50 height = 50>";
+			$(this).append(img);
+		})
+	})
+</script>
+<style>
+	p{
+		border: 1px dotted red;
+		width: 100%;
+		height: auto;
+	}
+</style>
+</head>
+<body>
+	<p title = "Tulips">꽃</p>
+	<p title = "국화">국화</p>
+	<p title = "Koala">코알라</p>
+	<p title = "Hydrangeas">수국</p>
+</body>
+</html>
