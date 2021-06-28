@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/myScript.js"></script>
+<style>
+	img{
+		width: 100px;
+		height: 100px;
+		margin: 5px;
+	}
+</style>
+<script type="text/javascript">
+	$(function() {
+		//확인버튼 클리하면 이미지가 회전
+		$('#btn1').on('click', function() {
+			//외부 스크립트 함수 호출
+			appnedImg();
+		});
+		//종료버튼을 클릭하면 이미지 회전이 멈춘다
+		$('#btn2').on('click', function() {
+			stopImg();
+			
+		});
+	})
+</script>
+</head>
+<body>
+	<input type="button" id="btn1" value="확인">
+	<input type="button" id="btn2" value="종료">
+	<br>
+	<div id="rst1">
+		<img alt="doch.jpg" src="../images/doch.jpg"> 
+		<img alt="Koala.jpg" src="../images/Koala.jpg"> 
+		<img alt="penguins.jpg" src="../images/펭귄.jpg"> 
+		<img alt="puppies.jpg" src="../images/puppies.jpg"> 
+		<img alt="사자.jpg" src="../images/사자.jpg">
+	</div>
+</body>
+</html>

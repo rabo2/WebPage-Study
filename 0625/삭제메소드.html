@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#btn1').on('click', function() {
+			$('#rst1').empty();
+		});
+		$('#btn2').on('click', function() {
+			$('#rst2').remove();
+		});
+		$('#btn3').on('click', function() {
+			$('p').remove('#pp');
+		});
+	})
+</script>
+<style>
+	div{
+		background: yellow;
+		margin: 10px;
+		
+	}
+	#rst1{
+		border: 3px dashed red;
+		
+	}
+	#rst2{
+		border: 3px dashed blue;
+	}
+	p{
+		border: 5px solid lime;
+	}
+</style>
+</head>
+<body>
+	<input id="btn1" type="button" value="empty">
+	<input id="btn2" type="button" value="remove">
+	<input id="btn3" type="button" value="remove_select">
+	<br>
+	<div id="rst1">
+		<p>Hello jQuery~</p>
+	</div>
+	<div id="rst2">
+		<p>Hello jQuery~</p>
+	</div>
+	<p>안녕하세요</p>
+	<p id="pp">반갑습니다</p>
+</body>
+</html>

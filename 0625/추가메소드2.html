@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#apeend').on('click', function() {
+			$('#rst1').append($('#rst1 img').first());
+		});
+		
+		$('#prepend').on('click', function() {
+			$('#rst2').prepend($('#rst2 img').last());
+		});
+	})
+</script>
+<style>
+	img{
+		width: 100px;
+		height: 100px;
+	}
+</style>
+</head>
+<body>
+	<input type="button" id="apeend" value="apped">
+	<br>
+	<div id="rst1">
+		<img alt="doch.jpg" src="../images/doch.jpg"> 
+		<img alt="Koala.jpg" src="../images/Koala.jpg"> 
+		<img alt="penguins.jpg" src="../images/펭귄.jpg"> 
+		<img alt="puppies.jpg" src="../images/puppies.jpg"> 
+		<img alt="사자.jpg" src="../images/사자.jpg">
+	</div>
+
+	<input type="button" id="prepend" value="prepend">
+	<br>
+	<div id="rst2">
+		<img alt="doch.jpg" src="../images/doch.jpg"> 
+		<img alt="Koala.jpg" src="../images/Koala.jpg"> 
+		<img alt="penguins.jpg" src="../images/펭귄.jpg"> 
+		<img alt="puppies.jpg" src="../images/puppies.jpg"> 
+		<img alt="사자.jpg" src="../images/사자.jpg">
+	</div>
+</body>
+</html>

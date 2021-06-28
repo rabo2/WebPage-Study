@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#btn1').on('click', function() {
+			$('p').addClass('pcolor');
+		});
+		$('p').on('click', function() {
+			//클래스 추가 메소드
+// 			$(this).addClass('backcolor');
+			//클래스 추가 삭제(토글)메소드
+// 			$(this).toggleClass('backcolor');
+			if ($(this).hasClass('backcolor')) {
+				$(this).removeClass('backcolor');
+			}else{
+				$(this).addClass('backcolor');
+			}
+		});
+		
+		//마우스를 영역에 올렸을 때 클래스 추가
+		$('#rst1').on('mouseover', function() {
+			$(this).addClass('backcolor');
+		});
+		
+		//마우가 영역에서 벗어났을 때 클래스 제거
+		$('#rst1').on('mouseout', function() {
+			$(this).removeClass('backcolor');
+		})
+
+		
+// 		$('img').on('mouseover', function() {
+// 			$(this).addClass('borderblue');
+// 		});
+		
+// 		$('img').on('mouseout', function() {
+// 			$(this).removeClass('borderblue');
+// 		})
+
+		$('img').hover(
+		function() {
+			$(this).addClass('borderblue');
+		}, 
+		function() {
+			$(this).removeClass('borderblue');
+		});
+	})
+</script>
+<style>
+.pcolor {
+	color: red;
+}
+
+.backcolor {
+	background: orange;
+}
+
+.borderblue {
+	border: 2px solid blue;
+	border-radius: 50%;
+}
+
+div {
+	margin: 20px;
+	padding: 20px;
+}
+
+img {
+	width: 140px;
+	height: 140px;
+}
+</style>
+</head>
+<body>
+	<input type="button" id="btn1" value="확인">
+	<p>산들 바람이 불어옵니다</p>
+	<p>무궁화 꽃이 피었습니다</p>
+	<p>산들 바람이 불어옵니다</p>
+
+	<div id="rst1"></div>
+
+	<img alt="coffe" src="../images/coffe.jpg">
+	<img alt="빙쇼" src="../images/뱅쇼.jpg">
+	<img alt="식품1" src="../images/식품1.jpg">
+	<img alt="카푸치노" src="../images/카푸치노.jpg">
+</body>
+</html>
