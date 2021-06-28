@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{
+		width: 300px;
+		height: 300px;
+	}
+</style>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#show').on('click', function() {
+			$('img').show(500);
+		})
+		
+		//callback함수 현재 작업이 완료된 후에 호출되는 함수
+		$('#hide').on('click', function() {
+			$('img').hide(2000, function() {
+				alert('숨김')
+			});
+		})
+		
+		$('#tog').on('click', function() {
+			$('img').toggle(100);
+		})
+		
+		$('sup').on('click', function() {
+			$('img').slideUp();
+		})
+		
+		$('#sdown').on('click', function() {
+			$('img').slideDown();
+		})
+		
+		$('#stog').on('click', function() {
+			$('img').slideToggle();
+		})
+		
+		$('#fin').on('click', function() {
+			$('img').fadeIn();
+		})
+		
+		$('#fout').on('click', function() {
+			$('img').fadeOut();
+		})
+		
+		$('#ftog').on('click', function() {
+			$('img').fadeToggle();
+		})
+		
+	})
+</script>
+</head>
+<body>
+	<input type="button" id="show" value="show">
+	<input type="button" id="hide" value="hide">
+	<input type="button" id="tog" value="toggle">
+	<input type="button" id="sup" value="slide">
+	<input type="button" id="sdown" value="slideDown">
+	<input type="button" id="stog" value="slideToggle">
+	<input type="button" id="fin" value="fadeIn">
+	<input type="button" id="fout" value="fadeOut">
+	<input type="button" id="ftog" value="fadToggle">
+	
+	<br>
+	
+	<div id="rst">
+		<img alt="코알라" src="../images/Koala.jpg">
+	</div>
+</body>
+</html>

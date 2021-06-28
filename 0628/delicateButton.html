@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		count = 0;
+//		선택자에는 부모 요소를 기술하고 후에 메소드 매개변수로 이벤트, 이벤트 대상 요소 그리고 이벤트핸들러를
+//		기술한다.
+// 		$('div').delegate('.btn', 'clcik', function() {});
+		$('div').on('click', '.btn', function() {
+			count++;
+			$('<input>',{
+				'type' : 'button',
+				'class' : 'btn',
+				'value' : '새로운버튼' + count
+			}).appendTo('#rst');
+		});
+		
+		$('body').on('click', '#clear', function() {
+			$(domcument).off('click');
+// 			$('div').off('click');
+		})
+	})
+</script>
+</head>
+<body>
+<pre>
+  이벤트 등력 형식 : delegate
+ 이미 생성된 버튼과 실행 후 동적으로 새롭게 생성되는 버튼에 같은 이벤트 핸들러를 등록
+  </pre>
+  
+  <div>
+  	<input type="button" class="btn" value="버튼1">
+  	<input type="button" class="btn" value="버튼2">
+  </div>
+	
+	<input type="button" id="clear" value="헤제">
+
+	<br>
+
+	<div id="rst">
+	</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+//		v.3.0이후에는 on으로 대체됨
+// 		$('.btn').bind('click', function()
+		$('.btn').on('click', function() {
+			//같은 형식의 버튼을 생성
+			$('<input>',{
+				'type' : 'button',
+				'class' : 'btn',
+				'value' : '새로운버튼'
+			}).appendTo('#rst');
+		});
+		
+		$('#clear').on('click', function() {
+//			$('.btn').unbid('click') => 3.0이후 사용 x
+			$('.btn').off('click');
+		})
+	})
+</script>
+
+</head>
+<body>
+  <pre>
+  이벤트 등력 형식 : bind
+  실행 이전에 이미 document에 생성되었는 있는 요소에만 이벤트 핸들러가 동작한다.
+  </pre>
+  
+  <div>
+  	<input type="button" class="btn" value="버튼1">
+  	<input type="button" class="btn" value="버튼2">
+  </div>
+	
+	<input type="button" id="clear" value="헤제">
+
+	<br>
+
+	<div id="rst">
+	</div>
+</body>
+</html>
