@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		req = new XMLHttpRequest();
+		$('#box1 input:button').on('click', function() {
+			//입력값 가져오기
+			id = $(':text').val();
+			pw = $(':password').val();
+			
+			//요청 - post
+			data = `id ${id} $pw ${pw}`;
+			req.open('post', 'postTest.jsp', true);
+			
+			//HTTP요청 헤더 값을 설정 - content-type : request에 실어보내는 데이터 type정보를 표현
+			//반드시 open()뒤에 호출하고, send() 전에 호출해야 한다.
+			req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			req.send(data);
+			
+		})
+	})
+</script>
+</head>
+<body>
+	<div id="box1">
+		<form>
+		id : <input type="text" name="id"> <br>
+		pw : <input type="password" name="pw"> <br>
+		<input type="button" value="전송">
+		<input type="reset">
+		</form>
+
+	<div id="rst1"></div>
+	</div>
+</body>
+</html>
