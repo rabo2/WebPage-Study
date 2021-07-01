@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+td{
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	padding: 5px;
+}
+.tr1{
+	background: yellow;
+}
+.td1{
+	width: 200px;
+}
+</style>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+   $('#btn').on('click', function(){
+      $.ajax({
+         url : 'member1.jsp',
+         type : 'get',   // method
+         success : function(res){
+        	code = "";
+        	$.each(res, function(i, v) {
+        		code += (i+1) + "번 째 데이터 정보<br>";
+        		code += "아이디 : " + res[i].mid + "<br>";
+        		code += "이름 : "	+ res[i].mname + "<br>";
+        		code += "전화번호 : " +res[i].mhp +  "<br><br>";
+        	})
+        	$('#rst1').html(code);
+        	
+        	table = "<hr>\nMEMBER 테이블 목록 \n <table border = '1'>";
+        	table += "<tr class = 'tr1'><td class = 'td1'>아이디</td><td>이름</td><td>전화번호</td></tr>";
+        	$.each(res, function(i, v) {
+        		table += "<tr>";
+        		table += "<td>"+res[i].mid+"</td>";
+        		table += "<td>"+res[i].mname+"</td>";
+        		table += "<td>"+res[i].mhp+"</td>";
+				table += "</tr>";
+        	})
+        	table += "</table>";
+        	$('#rst2').html(table);
+         },
+         error : function(xhr){
+            alert("상태 : " + xhr.status);
+         },
+         dataType : 'json'
+      })
+   })
+})
+</script>
+
+</head>
+<body>
+
+   <input type="button" id="btn" value="확인">
+      <br>
+   <div id="rst1"></div>
+     <div id="rst2"></div>
+   
+</body>
+</html>

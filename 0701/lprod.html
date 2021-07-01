@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+th{
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	padding: 5px;
+}
+td{
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	padding: 5px;
+}
+.tr1{
+	background: lime;
+}
+.td1{
+	width: 200px;
+}
+.tr1 td:hover, tr th:hover{
+	background: yellow;
+}
+</style>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#btn').on('click', function() {
+			$.ajax({
+				url : "lprod.jsp",
+				type : 'get',
+				success : function(res) {
+					code = "";
+					$.each(res, function(i) {
+						code += (i+1) + "번째 데이터 <br>";
+						code += "ID : " + res[i].id +"<br>";
+						code += "GU : " + res[i].gu + "<br>";
+						code += "NAME : " + res[i].nm + "<br><br>";
+					})
+					$('#rst1').html(code);
+					
+					table = "<table border = '1'>"
+							+ "<tr class = 'tr1'>"
+							+ "  <td class = 'td1'>LPROD_NO</td>"
+							+ "  <td>LPROD_GU</td>"
+							+ "  <td>LPROD_NM</td>"
+							+ "</tr>";
+					$.each(res, function(i) {
+						table += "<tr>"
+						table += "<td>"+res[i].id+"</td>";
+						table += "<td>"+res[i].gu+"</td>";
+						table += "<td>"+res[i].nm+"</td>";
+						table += "</tr>"
+						
+					})
+					table += "</table>"
+					$('#rst2').html(table);
+				},
+				error: function(error) {
+					alert("상태  : " + error);
+				},
+				dataType : 'json'
+			})
+		})
+		$('#btn2').on('click', function() {
+			$.ajax({
+				url : "lprod2.jsp",
+				type : 'get',
+				success : function(res) {
+					$('#rst3').html(res);
+				},
+				error: function(error) {
+					alert("상태  : " + error);
+				},
+				dataType : 'html'
+			})
+		})
+	})
+</script>
+</head>
+<body>
+	<input type="button" value="lprod1" id="btn">
+	<br>
+	<div id="rst1"></div>
+	<div id="rst2"></div>
+	<input type="button" value="lprod2 " id="btn2">
+	<br>
+	<div id="rst3"></div>
+	<div id="rst4"></div>
+</body>
+</html>
