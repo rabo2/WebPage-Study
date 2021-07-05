@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function() {
+// 	$.ajax({
+// 		dataType : ,
+// 		url : ,
+// 		success : function() {
+			
+// 		},
+// 		error: function() {
+			
+// 		},
+// 		dataType : 
+		
+// 	})
+	
+	$.get({
+		'buyerNames.jsp', //url
+		function() {
+			//success
+		},
+		'json' //dataType
+	})
+})
+</script>
+<style>
+ th{
+ 	width: 200px;
+ 	height: 50px;
+ }
+ td{
+ 	height: auto;
+ 	text-align: center;
+ }
+</style>
+</head>
+<body>
+	<div id="box1">
+	  <div id="rst">
+		<table border="1">
+		  <tr>
+		   <th>거래처 이름</th>
+		   <th>거래처 상세정보</th>
+		  </tr>
+		  <tr>
+		    <td id="names"></td>
+		    <td id="details"></td>
+		  </tr>
+		 </table>
+	  </div>
+	</div>
+</body>
+</html>
