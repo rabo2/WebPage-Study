@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+   $('#box1 :button').on('click', function(){
+      $.ajax({
+         url : 'member2.jsp',
+         type : 'get',
+         dataType : 'json', // ajax의 속성(url,type,method..등) 순서는 상관 없다
+         success : function(res){
+            code = "<table border = '1'><tr><td>아이디</td><td>이름</td><td>주소</td></tr>"
+            
+            $.each(res,function(i,v){
+               
+            code += "<tr><td><a class='uid' href='#'>" +res[i].id+ "</a></td>";
+            code += "<td>" +res[i].name+ "</td>";
+            code += "<td>" +res[i].add1 + res[i].add2 + "</td></tr>";
+            
+            })
+            code += "</table>";
+            $('#rst').html(code);
+         },
+         error : function(xhr){
+            alert(xhr.status);            
+         }
+         
+      })//ajax
+   });
+   
+   // delegate방식으로 이벤트 설정
+   $('#rst').on('click', '.uid', function(){
+      
+//       console.log( $(this).text() );
+      
+      $.ajax({
+         url : 'detail.jsp',
+         method : 'post',
+         data : { id : $(this).text() },
+         success : function(res){
+        	 code = "<table border = '1'><tr><td>아이디</td><td>이름</td><td>주소</td></tr>"
+                 
+                 $.each(res,function(i,v){
+                    
+                 code += "<tr id = '"+res[i].id+"'>"
+                 code += "<td><a class='uid' href='#'>" +res[i].id+ "</a></td>";
+                 code += "<td>" +res[i].name+ "</td>";
+                 code += "<td>" +res[i].add1 + res[i].add2 + "</td></tr>";
+                 
+                 })
+                 code += "</table>";
+                 $('#rst').html(code);
+        	 
+         },
+         error : function(xhr){
+//             alert(xhr.status);
+         },
+         dataType : 'json'
+      })
+      
+   })
+});
+</script>
+
+</head>
+<body>
+   <div id="box1">
+      <input type="button" value="확인">
+      <br>
+      <div id="rst"></div>
+   </div>
+</body>
+</html>
