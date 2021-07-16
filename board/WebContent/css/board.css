@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+#wrt{
+	position: relative;
+	left: 90%;
+}
+
+.container{
+	margin-left: 40%;
+}
+
+.pager{
+	float : left;
+	margin: 5px;
+}
+
+p{
+	padding: 5px;
+	margin: 5px;	
+}
+
+.p1{
+	float: left;	
+}
+
+.p2{
+	float: left;
+}
+
+.p3{
+	clear: both;
+}
+
+textarea{
+	width: 900px;
+}
+
+input[value="등록"]{
+	display: inline-block;
+}
