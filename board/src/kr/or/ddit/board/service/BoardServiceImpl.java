@@ -11,13 +11,14 @@ import kr.or.ddit.board.vo.ReplyVO;
 public class BoardServiceImpl implements IBoardService {
 	private BoardDaoImpl dao;
 	private static BoardServiceImpl service;
-	
+
 	private BoardServiceImpl() {
 		dao = BoardDaoImpl.getInstance();
 	}
-	
+
 	public static BoardServiceImpl getInstance() {
-		if(service == null) service = new BoardServiceImpl();
+		if (service == null)
+			service = new BoardServiceImpl();
 		return service;
 	}
 
@@ -44,7 +45,7 @@ public class BoardServiceImpl implements IBoardService {
 		}
 		return count;
 	}
-	
+
 	@Override
 	public List<BoardVO> boardList(Map<String, Integer> map) {
 		List<BoardVO> list = null;
@@ -54,7 +55,7 @@ public class BoardServiceImpl implements IBoardService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return list;
 	}
 
@@ -81,6 +82,26 @@ public class BoardServiceImpl implements IBoardService {
 		return list;
 	}
 
+	@Override
+	public void replyDelete(int renum) {
+		try {
+			dao.replyDelete(renum);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
+	@Override
+	public int replyUpdate(ReplyVO vo) {
+		int res = 0;
+		try {
+			res = dao.replyUpdate(vo);
+		} catch (SQLException e) {
+			// TODO: handle exception
+
+		}
+		return res;
+	}
 
 }

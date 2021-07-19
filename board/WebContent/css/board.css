@@ -38,3 +38,17 @@ textarea{
 input[value="등록"]{
 	display: inline-block;
 }
+
+#modifyForm {
+	display: none;
+}
+
+#modifyForm textarea{
+	width: 300px;
+}
+
+.rep{
+	border: 1px dotted black;
+	margin: 20px;
+	
+}

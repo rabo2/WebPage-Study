@@ -17,5 +17,9 @@ public interface IBoardService {
 	public int insertReply(ReplyVO vo);
 
 	List<ReplyVO> getAllReply(int bonum);
+
+	public void replyDelete(int renum);
+
+	public int replyUpdate(ReplyVO vo);
 		
 }

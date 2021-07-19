@@ -7,19 +7,20 @@
 %>
 [
 <%
+int i = 0;
 if (list != null && list.size() > 0) {
-	int i = 0;
 	for (ReplyVO vo : list) {
 		if (i > 0) out.println(",");
 %>
 	{ 
-		"renum" : <%=vo.getRenum()%> 
-		"bonum" : <%=vo.getBonum()%>, 
-		"name" : <%=vo.getName()%>, 
-		"cont" : <%=vo.getCont()%>, 
-		"redate" : <%=vo.getRedate()%>, 
+		"renum" : "<%=vo.getRenum()%>",
+		"bonum" : "<%=vo.getBonum()%>", 
+		"name" : "<%=vo.getName()%>", 
+		"cont" : "<%=vo.getCont()%>", 
+		"redate" : "<%=vo.getRedate()%>"		
 	}
 <%
+	i++;
 	}
 }
 %>

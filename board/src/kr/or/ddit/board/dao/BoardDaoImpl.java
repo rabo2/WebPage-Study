@@ -15,7 +15,7 @@ public class BoardDaoImpl implements IBoardDao {
 	private static BoardDaoImpl dao;
 	
 	private BoardDaoImpl() {
-		smc = new BuildedSqlMapClient().getSqlMapClient();
+		smc = BuildedSqlMapClient.getSqlMapClient();
 	}
 	
 	public static BoardDaoImpl getInstance() {
@@ -47,5 +47,16 @@ public class BoardDaoImpl implements IBoardDao {
 	@Override
 	public List<ReplyVO> getAllReply(int bonum) throws SQLException{
 		return smc.queryForList("board.getAllReply",bonum);
+	}
+
+	@Override
+	public void replyDelete(int renum) throws SQLException {
+		smc.delete("board.replyDelete", renum);
+	}
+
+	@Override
+	public int replyUpdate(ReplyVO vo) throws SQLException {
+		return smc.update("board.replyUpdate", vo);
+		
 	}
 }
