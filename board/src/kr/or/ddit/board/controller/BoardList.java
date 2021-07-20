@@ -47,7 +47,7 @@ public class BoardList extends HttpServlet {
 		int count = service.countList();
 		
 		//전체 페이지 수 = 전체 글 갯수/perList
-		int totalPage = (int) Math.ceil(count/perList);
+		int totalPage = (int) Math.ceil((double)count/(double)perList);
 		
 		//각 페이지 별 게시글의 start, end
 		//현재 페이지의 게시글(perList) 갯수 : 5

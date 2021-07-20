@@ -88,10 +88,11 @@ $(function() {
    }else if (vname == 'r_modify') {
 	      // 게시글수정 - idx로 접근
 	      //1-1. p태그에 수정할 내용 가져오기
+	      if($('#modifyForm textarea').css('display') != 'none') {
+	    	  replyReset();
+	      }
 	      
 	      modifyCont = $(this).parents('.rep').find('.cont').html();
-	      
-	      if($('#modifyForm textarea').val() != 'none') replyReset();
 	      
 	      
 	      //1-2. <br>태그를 \n 수정

@@ -190,14 +190,8 @@ replyReset = function(){
 	$.ajax({
 		url : '/board/ReplyUpdate',
 		type : 'post',
-		data : 'cont',
-		dataType : 'json',
-		success : function() {
-			
-		},
-		error : function() {
-			
-		}
+		data : reply,
+		dataType : 'json'
 	});
 }
    

@@ -16,7 +16,7 @@ if (list != null && list.size() > 0) {
 		"renum" : "<%=vo.getRenum()%>",
 		"bonum" : "<%=vo.getBonum()%>", 
 		"name" : "<%=vo.getName()%>", 
-		"cont" : "<%=vo.getCont()%>", 
+		"cont" : "<%=vo.getCont().replace("\r", "").replace("\n", "<br>")%>", 
 		"redate" : "<%=vo.getRedate()%>"		
 	}
 <%

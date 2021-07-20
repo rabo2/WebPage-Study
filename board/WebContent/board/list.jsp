@@ -24,7 +24,7 @@ int ttPage = (Integer)request.getAttribute("totalPage");
 		"subject" : "<%=vo.getSubject() %>",
 		"writer" : "<%=vo.getWriter() %>",
 		"mail" : "<%=vo.getMail() %>",
-		"cont" : "<%=vo.getContent() %>",
+		"cont" : "<%=vo.getContent().replace("\r", "").replace("\n", "<br>") %>",
 		"hit" : "<%=vo.getHit() %>",
 		"wdate" : "<%=vo.getWdate() %>"
 	}

@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.txt{
+	width: 500px;
+}
+
 #wrt{
 	position: relative;
 	left: 90%;
@@ -31,9 +35,6 @@ p{
 	clear: both;
 }
 
-textarea{
-	width: 900px;
-}
 
 input[value="등록"]{
 	display: inline-block;

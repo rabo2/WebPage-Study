@@ -63,5 +63,14 @@
   <select id="getAllReply" parameterClass="int" resultClass="replyVO">
      select * from reply where bonum = #bonum#
   </select>
+  
+  <delete id="replyDelete" parameterClass="int">
+  	delete reply where renum = #data#
+  </delete>
+  
+  <update id="replyUpdate" parameterClass="replyVO">
+  	update reply
+  	set (rnum = #renum#, cont = #cont#)
+  </update>
 
 </sqlMap>
